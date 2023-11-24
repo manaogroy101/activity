@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Burger Ka Sakin</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+           
+        }
+        body{
+            box-sizing: border-box;
+            background-color: rgb(133, 97, 231);
+        }
+        .btitle{
+            text-align: center;
+            font-weight: 700;
+        }
+        .cont{
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            height: 600px;
+            width: 800px;
+            background-color: aliceblue;
+            padding: 20px
+        }
+        .tot{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="btitle pt-5 text-white">Virtual Snacks</h1>
+    <div class="container cont shadow">
+                <h2>Cheese Burger Php 45.00</h2>
+                <input type="number" id="bval" class="form-control" placeholder="Quantity">
+
+                <h2>Fries Php 30.00</h2>
+                <input type="number" id="fval" class="form-control" placeholder="Quantity">
+
+                <h2>Coke Php 25.00</h2>
+                <input type="number" id="cval" class="form-control" placeholder="Quantity">
+                
+                <button type="button" class="btn btn-primary burgeradd mt-2 form-control" onclick="process()">Add Order</button>
+                <a href="activity.html"><button type="button" class="btn btn-warning form-control mb-2 mt-1">Refresh</button></a>
+
+                <h2>Your Order: </h2>
+                <h4 id="orderlist"></h4>
+                <h4 id="orderlist2"></h4>
+                <h4 id="orderlist3"></h4>
+                <h4 id="displayord" class="tot"></h4>
+      
+
+    </div>
+    <script>
+
+       function process(){
+            const bv= 45;
+            const fv = 30;
+            const cv = 25;
+
+            let inpb = document.getElementById("bval").value;
+            let inpf = document.getElementById("fval").value;
+            let inpc = document.getElementById("cval").value;
+
+            let sumb = inpb * bv;
+            let sumf = inpf * fv;
+            let sumc = inpc * cv;
+
+            let total = sumb + sumf + sumc;
+
+            document.getElementById("orderlist").innerHTML="Burger: "+inpb+ " = " +sumb;
+            document.getElementById("orderlist2").innerHTML="Fries: " +inpf+ " = " +sumf;
+            document.getElementById("orderlist3").innerHTML="Coke: " +inpc+ " = " +sumc;
+            document.getElementById("displayord").innerHTML="Total Amount : "+total;
+
+       }
+
+
+    </script>
+
+    
+</body>
+</html>
